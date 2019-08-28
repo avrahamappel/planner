@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mr. Schwartz's Planner</title>
+</head>
+<body>
+
+<h4>Current Time</h4>
+
+<div id="current-time"></div>
+
+<script type="text/javascript">
+	function getTime() {
+		const time = new Intl.DateTimeFormat(undefined, {
+		    hour: 'numeric',
+		    minute: 'numeric'
+		}).format(new Date)
+
+		document.querySelector('#current-time').innerHTML = time
+	}
+
+	getTime()
+
+	setInterval(getTime, 1000)
+</script>
+
+</body>
+</html>
